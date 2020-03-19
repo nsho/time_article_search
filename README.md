@@ -13,7 +13,7 @@ Note: Many files included come out of the box with web2py and provide an admin i
 The corpus dataset used can be downloaded at the following link: 
 http://ir.dcs.gla.ac.uk/resources/test_collections/time/
 
-The time.all folder was exported and manipulated locally with python and via excel in various ways. The resultant files became datasets in the projects various databases.
+The time.all folder was exported and manipulated locally with python and excel. The resultant files became datasets in the projects various databases.
 
 ## Model -- db.py
 The model includes the file db.py. The end of this file includes code that defines the four sqlite databases utilized by this project. 
