@@ -58,11 +58,11 @@ This takes the stemmed query and returns the query norm and vector weights.
 This is primary function and calls the previous two.
 
 time_search main tasks:
--Defines the search form for the view to display. 
--Accepts and processes the query.
--call PS to get stems for query.
--calls getQueryInfo() to obtain query norm/length and weights.
--Selects td_tdidf databases and attempts to apply a cosine similarity comparison between the query and each document vector.
+1) Defines the search form for the view to display. 
+2) Accepts and processes the query.
+3) call PS to get stems for query.
+4) calls getQueryInfo() to obtain query norm/length and weights.
+5) Selects td_tdidf databases and attempts to apply a cosine similarity comparison between the query and each document vector.
 
    #KNOWN ISSUE: results are consistently 0 due to doc product multiplying to equal zero.
 
