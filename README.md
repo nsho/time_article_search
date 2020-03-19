@@ -36,7 +36,7 @@ Also includes a term-document tf-idf matrix with preprocessed tfidf values for a
 These two tables are ultimately concatenated during processing in the controller file.
 
 ## Views
-The View folder contains many files not relevant to the project. 
+The View folder contains many files not relevant to the project. The two that are relevant include layout.html and time_search.html.
 
 #### Layout.html
 One of two view files utilized is layout.html which provides the main layout definition for the site. Much comes out of the box and is commented out for this project.
