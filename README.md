@@ -69,7 +69,8 @@ time_search main tasks:
 4) calls getQueryInfo() to obtain query norm/length and weights.
 5) Selects td_tdidf databases and attempts to apply a cosine similarity comparison between the query and each document vector.
 
-   #KNOWN ISSUE: results are consistently 0 due to dot product multiplying to equal zero. 
+   #KNOWN ISSUE: results are consistently 0 due to dot product multiplying to equal zero. The dot product sums to zero, even when known terms included in the corpus are searched. This indicates to me that the non-empty weights in the vectors are not in alignment and that the vector indexes are discrepant.
+
 
     #To Do: add to cos_sim to dict of docs and cos similarity scores
     #To Do: function that sorts and retrieves list of top five scores
