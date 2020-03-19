@@ -1,4 +1,4 @@
-# time_article_search (Work In Progress)
+# Time Article Search (Work In Progress)
 Web2py application that searches a known corpus of text documents. 
 
 The search application is currently hosted at: https://nshort1234.pythonanywhere.com/search/default/time_search
