@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+<h2>Time Magazine Article Search</h2> 
+{{= form}}
+
+<h3>Submitted Query</h3>
+
+{{= BEAUTIFY(request.vars)}}
+
+<h3>
+Stemmed Query
+</h3>
+{{= msg}}
+
+<h3>Accepted Query</h3>
+{{=BEAUTIFY(form.vars)}}
+<h3>Errors in form</h3>
+{{=BEAUTIFY(form.errors)}}
+<h4>
+   Results: (At present shows list of cosine similarity scores with sample of the corpus.)
+</h4>
+{{= results}}

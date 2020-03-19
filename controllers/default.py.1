@@ -1,0 +1,186 @@
+# -*- coding: utf-8 -*-
+# -------------------------------------------------------------------------
+# This is a controller
+#compare query with matrices
+import numpy as np
+import pandas as pd
+import nltk
+
+def getQueryLength(Q):
+    'Calculate norm of query tokens.'
+
+    Q_sumSquares = 0
+    #H = computeIDF(3)
+    w=1
+    
+  
+    #for T in Q:
+        #for index,Token in df.iterrows():
+            #if T == Token['stem']:
+               #Q_sumSquares += (w*w)
+
+            #else:
+               #continue
+  
+    L = np.sqrt(Q_sumSquares)
+    L = 2
+    return Q
+
+'''
+def cos_sim(query):
+    'returns cosine similarity scores'
+
+    #get weight of query
+    #I is IDF of term in query
+    #K is number times term is in query
+    
+    
+    query = nltk.word_tokenize(query)
+ 
+    query_vec = []
+    for i in query:
+        #get K
+        K = query.count(i)
+        #get I which is IDF of token
+        #N docs in corpus is known to be 423, which is hardcoded in here. 
+        #this will need to be changed if document set changes
+        N = 423
+        ###### !!!! Nt needs to update for every term
+        Nt = 54
+        I = np.log2(N/Nt)
+        #token weight
+        w = K * I 
+        query_vec.append(w)
+        
+    norm_query = np
+    
+cos_sim('hello hello hi how are you.')
+'''
+
+def stem(terms):
+    'Stems the input terms according to Porter Algorithm.'
+    from nltk.stem import PorterStemmer
+    from nltk.tokenize import sent_tokenize, word_tokenize
+    ps = PorterStemmer()
+    terms = word_tokenize(terms)
+    stemList = []
+    for t in terms:
+        stemList.append(ps.stem(t))
+
+    return stemList
+
+
+def time_search():
+    form = SQLFORM.factory(
+        Field('Query', requires=IS_NOT_EMPTY()),
+        submit_button='Search')
+    if form.process().accepted:
+        response.flash = 'form accepted'
+        session.Query = form.vars.Query
+       
+    elif form.errors:
+        response.flash = 'form has errors'
+    
+    stemmed_query = stem(session.Query)
+    
+    msg = getQueryLength(stemmed_query)
+    results = SQLTABLE(db().select(db.corpus.ALL))
+    
+    #results = db(db.td_tfidf_a.doc17 != None).select()
+    
+    #for row in rows:
+        #results = row
+        #break
+    return dict(form=form, msg=msg, results=results)
+    #form = SQLFORM.factory(
+        #Field('your_name', requires=IS_NOT_EMPTY()),
+        #Field('your_image', 'upload'))
+
+    #if form.process().accepted:
+        #response.flash = 'Search processing.'
+        #session.searchterms = form.vars.searchterms
+
+    # The internal query to fetch all results containing the search query term
+
+    # db(db.mytable.myfield.contains('text')).select()
+
+    #return dict(form=form, results=results)
+    # testing if the form was accepted
+        # gathering form submitted values
+        #searchterm = form.vars.queries
+
+        # A simple text search with %like%
+        #searchterm &= db.corpus.text.like("%%%s%%" % searchterm)
+    #elif form.errors:
+        #response.flash = 'Search term has errors.'
+    #else:
+        #response.flash = 'Please try your search again.'
+
+
+    #results = SQLTABLE(db().select(db.corpus.ALL))
+
+    #msg = searchterm
+    #count = db(searchterm).count()
+    #results = db(form.vars).select(orderby=~db.corpus.date)
+    # msg = T("%s returns" % count )
+    #return dict(form=form, msg=msg, results=results)
+    #return dict(form=form)
+
+
+# ---- example index page ----
+
+'''
+
+
+def index():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
+# ---- API (example) -----
+@auth.requires_login()
+def api_get_user_email():
+    if not request.env.request_method == 'GET': raise HTTP(403)
+    return response.json({'status':'success', 'email':auth.user.email})
+
+# ---- Smart Grid (example) -----
+@auth.requires_membership('admin') # can only be accessed by members of admin groupd
+def grid():
+    response.view = 'generic.html' # use a generic view
+    tablename = request.args(0)
+    if not tablename in db.tables: raise HTTP(403)
+    grid = SQLFORM.smartgrid(db[tablename], args=[tablename], deletable=False, editable=False)
+    return dict(grid=grid)
+
+# ---- Embedded wiki (example) ----
+def wiki():
+    auth.wikimenu() # add the wiki to the menu
+    return auth.wiki()
+
+# ---- Action for login/register/etc (required for auth) -----
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    """
+    return dict(form=auth())
+
+# ---- action to server uploaded static content (required) ---
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+'''

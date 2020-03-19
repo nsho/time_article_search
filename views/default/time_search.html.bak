@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+<h2>Time Magazine Article Search</h2> 
+{{= form}}
+
+<h4>
+message
+</h4>
+{{= msg}}
+<h2>Submitted variables</h2>
+
+{{= BEAUTIFY(request.vars)}}
+
+<h2>Accepted variables</h2>
+{{=BEAUTIFY(form.vars)}}
+<h2>Errors in form</h2>
+{{=BEAUTIFY(form.errors)}}
+<h4>
+   results
+</h4>
+{{= results}}
