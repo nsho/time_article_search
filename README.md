@@ -10,10 +10,15 @@ Web2py enables one to run python based web applications that allow a developer t
 Note: Many files included come out of the box with web2py and provide an admin interface for editing code and troubleshooting bugs. The files unique to this project are detailed below.
 
 ## Dataset
+The Time Magazine dataset includes 423 text documents that were originally published as magazine articles.
+
 The corpus dataset used can be downloaded at the following link: 
 http://ir.dcs.gla.ac.uk/resources/test_collections/time/
 
 The time.all folder was exported and manipulated locally with python and excel. The resultant files became datasets in the projects various databases.
+
+The data for each of these can also be inspected in the databases folder.
+
 
 ## Model -- db.py
 The model includes the file db.py. The end of this file includes code that defines the four sqlite databases utilized by this project. 
@@ -75,4 +80,7 @@ time_search main tasks:
         #1) reduce size of query/doc vectors by removing mutually empty values
         #2) create document tfidf dynamically rather than via precalculated table upload
 
-    #To Do: add radio buttons on home page to enable user to select options such as weighting scheme
+    #To Do: Miscellaneous extra features that need to be added:
+        #1)	Radio buttons on home page to enable user to select options such as weighting scheme.
+        #2)	Relevance feedback table that compares with that in the dataset files.
+
