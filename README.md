@@ -3,6 +3,8 @@ Web2py application that searches a known corpus of text documents.
 
 The search application is currently hosted at: https://nshort1234.pythonanywhere.com/search/default/time_search
 
+Unlisted Youtube video: https://youtu.be/v2XYNpGJVcQ
+
 The project makes use of the model-view-controller framework advocated by web2py. 
 
 Web2py enables one to run python based web applications that allow a developer to manipulate a database, process data between and project a frontend interface largely with python code. 
@@ -34,7 +36,7 @@ This is and the next are two tables that serve the same purpose. They are partit
 
 These tables include a term-document tf-idf matrix with preprocessed tfidf values for all corpus terms. These values were derived locally with python and then inserted into the database.
 
-#### td_idfB
+#### td_tfidfB
 This is the second of the two tables.
 Also includes a term-document tf-idf matrix with preprocessed tfidf values for all corpus terms. 
 
